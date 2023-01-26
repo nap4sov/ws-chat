@@ -7,7 +7,7 @@ import App from './App';
 
 const AUTH0_DOMAIN = process.env.REACT_APP_AUTH0_DOMAIN;
 const AUTH0_CLIENT_ID = process.env.REACT_APP_AUTH0_CLIENT_ID;
-
+console.log();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,7 +15,10 @@ root.render(
       domain={AUTH0_DOMAIN}
       clientId={AUTH0_CLIENT_ID}
       authorizationParams={{
-        redirect_uri: 'http://localhost:3000',
+        redirect_uri:
+          process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : 'https://simple-chat-omega.vercel.app',
       }}
     >
       <BrowserRouter>
