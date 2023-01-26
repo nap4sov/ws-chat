@@ -10,7 +10,7 @@ import {
 } from './styles';
 import { Message } from './Message.jsx';
 
-const socket = io('http://localhost:3001');
+const socket = io(process.env.REACT_APP_CHAT_WS_ADDRESS);
 
 export const Chat = () => {
   const [message, setMessage] = useState('');
