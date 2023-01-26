@@ -7,7 +7,7 @@ import App from './App';
 
 const AUTH0_DOMAIN = process.env.REACT_APP_AUTH0_DOMAIN;
 const AUTH0_CLIENT_ID = process.env.REACT_APP_AUTH0_CLIENT_ID;
-console.log();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
