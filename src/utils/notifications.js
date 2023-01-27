@@ -12,3 +12,6 @@ const toastConfig = {
 
 export const notifyWarning = message =>
   toast.warning(message, { ...toastConfig, toastId: message });
+
+export const notifyError = message =>
+  toast.error(message, { ...toastConfig, toastId: message });

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useAuth0 } from '@auth0/auth0-react';
+import { RequestStats } from '../components/RequestStats';
 
 const StyledHeading = styled.h1`
   text-align: center;
@@ -11,8 +13,11 @@ const StyledImage = styled.img`
 `;
 
 const Home = () => {
+  const { user } = useAuth0();
+
   return (
     <div>
+      {user && <RequestStats email={user.email} />}
       <StyledHeading>Support me 😉</StyledHeading>
       <StyledImage src="/img/qr.png" />
     </div>
