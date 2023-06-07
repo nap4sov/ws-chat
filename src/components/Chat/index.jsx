@@ -10,7 +10,11 @@ import {
 } from './styles';
 import { Message } from './Message.jsx';
 
-const socket = io('https://nest-demo-server.herokuapp.com');
+const socket = io(
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3001'
+    : 'https://nest-demo-server.herokuapp.com',
+);
 
 export const Chat = () => {
   const [message, setMessage] = useState('');

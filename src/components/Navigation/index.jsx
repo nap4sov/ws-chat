@@ -17,6 +17,13 @@ export const Navigation = () => {
       >
         Chat
       </StyledLink>
+      <StyledLink
+        to="/blog"
+        end
+        className={({ isActive }) => (isActive ? 'active' : undefined)}
+      >
+        Blog
+      </StyledLink>
     </StyledNav>
   );
 };
